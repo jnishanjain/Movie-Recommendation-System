@@ -1,6 +1,8 @@
 # Movie Recommendation System
 
-This project is a movie recommendation system. It uses a machine learning approach (implemented in a Jupyter Notebook) to suggest movies to users.  A Streamlit application provides a user-friendly interface to interact with the recommendation system.
+This project is a movie recommendation system. 
+It uses a machine learning approach (implemented in a Jupyter Notebook) to suggest movies to users. 
+A Streamlit application provides a user-friendly interface to interact with the recommendation system.
 
 Key Components:
 
