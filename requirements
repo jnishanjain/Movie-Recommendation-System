@@ -1,8 +1,8 @@
 streamlit
-streamlit-lottie
 pandas
 requests
 scikit-learn
 matplotlib
 seaborn
 numpy
+git+https://github.com/andfanilo/streamlit-lottie.git
