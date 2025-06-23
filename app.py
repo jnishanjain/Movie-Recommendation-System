@@ -41,18 +41,47 @@ similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 st.set_page_config(page_title="Movie Recommender", layout="wide")
 
+# Inject custom CSS
 st.markdown("""
-    <h1 style='text-align: center; color: #FF4B4B;'>🎬 Movie Recommender System</h1>
-    <hr style="border:1px solid #f63366">
+    <style>
+    body {
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        color: white;
+    }
+    .big-title {
+        font-size: 50px;
+        text-align: center;
+        color: #FF4B4B;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .poster-container img {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+        transition: transform 0.2s ease;
+    }
+    .poster-container img:hover {
+        transform: scale(1.05);
+    }
+    </style>
 """, unsafe_allow_html=True)
+
+# Title
+st.markdown("<div class='big-title'>🎬 Movie Recommender System</div>", unsafe_allow_html=True)
 
 selected_movie = st.selectbox("Choose a movie you like:", movies['title'].values)
 
-if st.button("🎯 Recommend"):
-    names, posters = recommend(selected_movie)
-    cols = st.columns(5)
-    for i in range(5):
-        with cols[i]:
-            st.image(posters[i], use_container_width=True)
+if st.button("🚀 Get My Movie Recommendations"):
+    with st.spinner("🔍 Finding best matches..."):
+        names, posters = recommend(selected_movie)
+        cols = st.columns(5)
+        for i in range(5):
+            with cols[i]:
+                st.markdown("<div class='poster-container'>", unsafe_allow_html=True)
+                st.image(posters[i], use_container_width=True)
+                st.markdown(f"**{names[i]}**")
+                st.markdown("</div>", unsafe_allow_html=True)
 
-            st.markdown(f"**{names[i]}**")
+# Footer
+st.markdown("<hr style='border:1px solid #f63366'>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Built with ❤️ using Streamlit</p>", unsafe_allow_html=True)
