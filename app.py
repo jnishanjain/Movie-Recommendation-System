@@ -45,13 +45,13 @@ st.set_page_config(page_title="Movie Recommender", layout="wide")
 st.markdown("""
     <style>
     body {
-        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        background: linear-gradient(to right, #1f4037, #99f2c8);
         color: white;
     }
     .big-title {
         font-size: 50px;
         text-align: center;
-        color: #FF4B4B;
+        color: #FDD835;
         font-weight: bold;
         margin-bottom: 20px;
     }
@@ -62,6 +62,15 @@ st.markdown("""
     }
     .poster-container img:hover {
         transform: scale(1.05);
+    }
+    .stButton > button {
+        display: block;
+        margin: 0 auto;
+        background-color: #FFA500;
+        color: white;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 8px;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -81,7 +90,3 @@ if st.button("🚀 Get My Movie Recommendations"):
                 st.image(posters[i], use_container_width=True)
                 st.markdown(f"**{names[i]}**")
                 st.markdown("</div>", unsafe_allow_html=True)
-
-# Footer
-st.markdown("<hr style='border:1px solid #f63366'>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>Built with ❤️ using Streamlit</p>", unsafe_allow_html=True)
