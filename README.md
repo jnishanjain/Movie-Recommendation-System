@@ -69,7 +69,8 @@ streamlit run app.py
 
 
 
-*(Add a screenshot image of your app UI here)*
+
+![App Screenshot](screenshot.png)
 
 ---
 
