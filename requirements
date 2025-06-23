@@ -1,9 +1,5 @@
-streamlit
-pickle-mixin
-requests
-pandas
-numpy
-matplotlib
-seaborn
-nltk
-scikit-learn
+streamlit==1.35.0
+requests==2.31.0
+pandas==2.2.2
+streamlit-lottie==0.0.5
+difflib3==0.5.0
